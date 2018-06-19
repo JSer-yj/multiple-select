@@ -1,0 +1,26 @@
+{
+  "name": "angular1-multiSelect",
+  "description": "",
+  "authors": [
+    "yangjie"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "angular",
+    "angularjs",
+    "multiSelect",
+    "multiple",
+    "select"
+  ],
+  "main": [
+    "./dist/multiSelect.js",
+    "./dist/multiSelect.min.css"
+  ],
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.*.*",
+    "jquery": "^2.1.4",
+    "angular-underscore-module": "^1.0.3"
+  }
+}

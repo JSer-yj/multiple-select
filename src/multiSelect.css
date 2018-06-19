@@ -1,0 +1,73 @@
+/*父级样式*/
+.multi-sel-group{
+  position: relative;
+  display: inline-block;
+  height: 34px;
+  font-size: 14px;
+  line-height:30px;
+}
+/*input标签*/
+.multi-sel-group .sel-input {
+  padding: 0 40px 0 6px;
+  height: 30px;
+  border: 2px solid #c5e5ed;
+  border-radius:2px;
+}
+/*span按钮*/
+.multi-sel-group .sel-input-btn{
+  position:absolute;
+  top:0;
+  right:0;
+  width: 34px;
+  height: 30px;
+  border: 2px solid #c5e5ed;
+  border-radius:2px;
+  border-top-left-radius:0;
+  border-bottom-left-radius:0;
+  color: #555555;
+  text-align: center;
+  cursor:pointer;
+}
+.multi-sel-group .sel-up-bg{background-color: #c5e5ed;}
+.multi-sel-group .sel-up-bg:hover{
+  background-color: #01C6D6;
+  border-color: #01C6D6;
+}
+.multi-sel-group .sel-down-bg{
+  background-color: #01C6D6;
+  border-color: #01C6D6;
+}
+.multi-sel-group .sel-up-bg:hover + div input.sel-input{
+  border-color: #01C6D6;
+}
+.multi-sel-group .sel-down-bg + div input.sel-input{
+  border-color: #01C6D6;
+}
+/*下拉框*/
+.multi-sel-group .sel-menu{
+  display: none;
+  border: 1px solid #c5e5ed;
+  border-radius:2px;
+  margin-top: 3px;
+  box-shadow: 2px 2px 2px #d5d8d8;
+}
+.multi-sel-group .sel-menu.in {
+  display: block;
+}
+/*下拉框-按钮*/
+.multi-sel-group .sel-btn{
+  width: 58px;
+}
+
+/*---------------------公用----------------------*/
+
+.multi-sel-group .csrnalwd{cursor:not-allowed!important;}
+.multi-sel-group .ovfhid {overflow: hidden;}
+.multi-sel-group .tlc{text-align: center;}
+.multi-sel-group .mr5{margin-right: 5px;}
+.multi-sel-group .donotSelest{
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

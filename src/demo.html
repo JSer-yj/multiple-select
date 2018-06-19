@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Multiple Select</title>
+    <link rel="stylesheet" href="multiSelect.css" />
+    <style>
+      label.label{margin-bottom: 10px;display: inline-block;}
+    </style>
+  </head>
+  <body>
+    <div ng-app="mydemo" ng-controller="myctrl">
+      <div>
+        <label class="label">请选择：</label>
+        <multi-select
+                items-list="itemsList"
+                names-list="myNamesList"
+                checks-list="checksList"
+                ng-model="checksList"
+        >
+        </multi-select>
+      </div>
+    </div>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/underscore/underscore.js"></script>
+    <script src="../bower_components/angular-underscore-module/angular-underscore-module.js"></script>
+    <script src="multiSelect.js"></script>
+    <script type="text/javascript">
+      var app=angular.module('mydemo',['multi.sel']);
+        app.controller('myctrl',function ($scope) {
+        $scope.itemsList=[
+          {id:1,name:'name1'},
+          {id:2,name:'name2'}
+        ];
+        $scope.myNamesList='name1';
+        $scope.checksList='1';
+      });
+    </script>
+  </body>
+</html>
