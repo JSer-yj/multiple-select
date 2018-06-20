@@ -3,7 +3,7 @@
   position: relative;
   display: inline-block;
   height: 34px;
-  line-height:30px;
+  line-height:24px;
   width: 210px;
 }
 .multi-sel-group *{
@@ -87,7 +87,8 @@
   max-height:300px;
 }
 .multi-sel-group .sel-list ul{
-  padding: 0 5px;
+  padding: 0 10px;
+  margin-top: 10px;
 }
 .multi-sel-group .sel-list ul li{
   list-style: none;
