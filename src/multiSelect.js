@@ -32,33 +32,32 @@
         template:
         '<div>\n' +
           '<div class="multi-sel-group">\n' +
-            '<span class="donotSelest sel-input-btn" ng-click="iconClick(dropdown);" ng-class="{\'csrnalwd\': myDisabled, \'sel-up-bg\': !dropdown, \'sel-down-bg\': dropdown}">\n' +
-            '<i class="glyphicon glyphicon-chevron-{{dropdown?\'up\':\'down\'}}">></i>\n' +
+            '<span class="donotSelest sel-span-btn curpnt" ng-click="iconClick(dropdown);" ng-class="{\'csrnalwd\': myDisabled, \'sel-up-bg\': !dropdown, \'sel-down-bg\': dropdown}">\n' +
+              '<i class="glyphicon glyphicon-chevron-{{dropdown?\'up\':\'down\'}}">></i>\n' +
             '</span>\n' +
-            '<div class="ovfhid" uib-tooltip="{{namesList.split(\',\').join(\'，\')}}">\n' +
-              '<input type="text" class="sel-input" placeholder={{placeTip||"全部"}} readonly ng-model="namesList" />\n' +
+            '<div class="ovfhid" uib-tooltip="{{namesList.split(\',\').join(\'，\')}}" tooltip-placement="bottom">\n' +
+              '<input type="text" class="sel-input curdft" placeholder={{placeTip||"全部"}} readonly ng-model="namesList" />\n' +
             '</div>\n' +
             '<div class="sel-menu" ng-class="{in: dropdown}" ng-blur="dropdown = false">\n' +
               '<div class="tlc">\n' +
-                '<button class="sel-btn mr5" type="button" ng-click="clearSelect()">清空</button>\n' +
-                '<button class="sel-btn mr5" type="button" ng-click="selectAll()">全选</button>\n' +
-                '<button class="sel-btn" type="button" ng-click="dropdown = false;selection()">确定</button>\n' +
+                '<span class="sel-btn curpnt mr5 donotSelest" type="button" ng-click="clearSelect()">清空</span>\n' +
+                '<span class="sel-btn curpnt mr5 donotSelest" type="button" ng-click="selectAll()">全选</span>\n' +
+                '<span class="sel-btn curpnt donotSelest" type="button" ng-click="dropdown = false;selection()">确定</span>\n' +
               '</div>\n' +
-              '<div style="overflow-x:auto;height:auto;max-height:300px;" ng-class="{in: dropdown}" ng-blur="dropdown = false">\n' +
-                '<table class="table table-hover mb8">\n' +
-                  '<tbody>\n' +
-                    '<tr ng-repeat="item in itemsList" style="border: none;" ng-click="item.checked = !item.checked">\n' +
-                      '<td class="tableCheck pd0 tlc">\n' +
-                        '<input type="checkbox" ng-checked="item.checked"/>\n' +
-                      '</td>\n' +
-                      '<td class="tll fw500 pd0 f666">{{item.name}}</td>\n' +
-                    '</tr>\n' +
-                    '<tr ng-if="!itemsList||itemsList.length==0">\n' +
-                      '<td>无可选项</td>\n' +
-                    '</tr>\n' +
-                  '</tbody>\n' +
-                '</table>\n' +
-              '</div>\n' +
+              '<div class="sel-list" ng-class="{in: dropdown}" ng-blur="dropdown = false">\n' +
+                '<ul>'+
+                  '<li class="curdft" ng-repeat="item in itemsList" ng-click="item.checked = !item.checked">\n' +
+                    '<div class="sel-checkbox">\n' +
+                      '<input type="checkbox" class="sel-check" ng-checked="item.checked"/>\n' +
+                      '<div class="{{item.checked?\'bg-after\':\'bg-before\'}}"></div>\n' +
+                    '</div>'+
+                    '<span>{{item.name}}</span>\n' +
+                  '</li>\n' +
+                  '<li ng-if="!itemsList||itemsList.length==0">\n' +
+                    '<span>无可选项</span>\n' +
+                  '</li>\n' +
+                '</ul>'+
+             '</div>\n' +
             '</div>\n' +
           '</div>\n' +
         '</div>\n',

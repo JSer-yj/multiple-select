@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Multiple Select</title>
+    <link rel="stylesgeet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="multiSelect.css" />
     <style>
       label.label{margin-bottom: 10px;display: inline-block;}
@@ -25,13 +26,18 @@
     <script src="../bower_components/angular/angular.js"></script>
     <script src="../bower_components/underscore/underscore.js"></script>
     <script src="../bower_components/angular-underscore-module/angular-underscore-module.js"></script>
+    <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="multiSelect.js"></script>
     <script type="text/javascript">
-      var app=angular.module('mydemo',['multi.sel']);
+      var app=angular.module('mydemo',['ui.bootstrap','multi.sel']);
         app.controller('myctrl',function ($scope) {
         $scope.itemsList=[
-          {id:1,name:'name1'},
-          {id:2,name:'name2'}
+          {id:1,name:'名称1名称名称名称名称名称名称名称名称名称名称'},
+          {id:2,name:'名称2名称名称名称名称名称名称名称名称名称名称'},
+          {id:3,name:'名称3名称名称名称名称名称名称名称名称名称名称'},
+          {id:4,name:'名称4名称名称名称名称名称名称名称名称名称名称'},
+          {id:5,name:'名称5名称名称名称名称名称名称名称名称名称名称'},
+          {id:6,name:'名称6名称名称名称名称名称名称名称名称名称名称'}
         ];
         $scope.myNamesList='name1';
         $scope.checksList='1';
