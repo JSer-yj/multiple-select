@@ -32,12 +32,19 @@
         template:
         '<div>\n' +
           '<div class="multi-sel-group">\n' +
+          
             '<span class="donotSelest sel-span-btn curpnt" ng-click="iconClick(dropdown);" ng-class="{\'csrnalwd\': myDisabled, \'sel-up-bg\': !dropdown, \'sel-down-bg\': dropdown}">\n' +
               '<i class="glyphicon glyphicon-chevron-{{dropdown?\'up\':\'down\'}}">></i>\n' +
             '</span>\n' +
-            '<div class="ovfhid" uib-tooltip="{{namesList.split(\',\').join(\'，\')}}" tooltip-placement="bottom">\n' +
-              '<input type="text" class="sel-input curdft" placeholder={{placeTip||"全部"}} readonly ng-model="namesList" />\n' +
+
+            '<div class="ovfhid">\n' +
+              '<input type="text" class="sel-input curdft ellipsis" placeholder={{placeTip||"全部"}} readonly ng-model="namesList" />\n' +
+              '<div ng-if="namesList!=\'\'" class="sel-tip">' +
+                '<div class="sel-tip-inner">{{namesList.split(\',\').join(\'，\')}}</div>'+
+                '<div class="sel-tip-arrow"></div>'+
+              '</div>'+
             '</div>\n' +
+          
             '<div class="sel-menu" ng-class="{in: dropdown}" ng-blur="dropdown = false">\n' +
               '<div class="tlc">\n' +
                 '<span class="sel-btn curpnt mr5 donotSelest" type="button" ng-click="clearSelect()">清空</span>\n' +
@@ -46,7 +53,7 @@
               '</div>\n' +
               '<div class="sel-list" ng-class="{in: dropdown}" ng-blur="dropdown = false">\n' +
                 '<ul>'+
-                  '<li class="curdft" ng-repeat="item in itemsList" ng-click="item.checked = !item.checked">\n' +
+                  '<li class="curdft ellipsis" ng-repeat="item in itemsList" ng-click="item.checked = !item.checked">\n' +
                     '<div class="sel-checkbox">\n' +
                       '<input type="checkbox" class="sel-check" ng-checked="item.checked"/>\n' +
                       '<div class="{{item.checked?\'bg-after\':\'bg-before\'}}"></div>\n' +
@@ -59,6 +66,7 @@
                 '</ul>'+
              '</div>\n' +
             '</div>\n' +
+          
           '</div>\n' +
         '</div>\n',
         link: function ($scope,ele,attr) {

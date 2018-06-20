@@ -18,7 +18,9 @@
   border-radius:2px;
   background: #F4F4F4;
   color: #676767;
+  width: calc(100% - 48px);
 }
+.multi-sel-group .sel-input:hover + div.sel-tip {display: block;}
 /*span按钮*/
 .multi-sel-group .sel-span-btn{
   position:absolute;
@@ -33,6 +35,7 @@
   color: #ffffff;
   font-weight: bolder;
   text-align: center;
+  line-height:30px;
 }
 .multi-sel-group .sel-up-bg{background-color: #49AFCD;}
 .multi-sel-group .sel-up-bg:hover{
@@ -90,12 +93,7 @@
   padding: 0 10px;
   margin-top: 10px;
 }
-.multi-sel-group .sel-list ul li{
-  list-style: none;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
+.multi-sel-group .sel-list ul li{list-style: none;}
 /*下拉框-列表-复选样式start*/
 .multi-sel-group div.sel-checkbox{
   display: inline-block;
@@ -128,22 +126,20 @@
 }
 /*下拉框-列表-复选样式end*/
 
-/*tooltip*/
-.multi-sel-group .tooltip {
+/*tool tip*/
+.multi-sel-group .sel-tip {
   position: absolute;
   z-index: 1070;
-  display: block;
+  display: none;
   font-family: '微软雅黑';
   font-size: 12px;
   line-height: 1.42857143;
   text-align: left;
   word-break: break-all;
-}
-.multi-sel-group .tooltip.bottom {
   padding: 5px 0;
   margin-top: 3px;
 }
-.multi-sel-group .tooltip-inner {
+.multi-sel-group .sel-tip-inner {
   max-width: 210px;
   padding: 3px 8px;
   text-align: center;
@@ -155,16 +151,14 @@
   border-top-left-radius: 0;
   -webkit-box-shadow: 2px 2px 2px #9DBFE2;
 }
-.multi-sel-group .tooltip-arrow {
+.multi-sel-group .sel-tip .sel-tip-arrow {
   position: absolute;
+  top: -5px;
+  left: 0;
   width: 0;
   height: 0;
   border-color: transparent;
   border-style: solid;
-}
-.multi-sel-group .tooltip.bottom .tooltip-arrow {
-  top: -5px;
-  left: 0;
   border-width: 5px 5px 5px 0;
   border-bottom-color: #01c6d6;
 }
@@ -177,6 +171,13 @@
 .multi-sel-group .ovfhid {overflow: hidden;}
 .multi-sel-group .tlc{text-align: center;}
 .multi-sel-group .mr5{margin-right: 5px;}
+.multi-sel-group .ellipsis{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  overflow: hidden;
+}
 .multi-sel-group .donotSelest{
   -moz-user-select: none;
   -webkit-user-select: none;
