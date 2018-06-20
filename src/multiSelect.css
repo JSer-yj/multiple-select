@@ -20,7 +20,9 @@
   color: #676767;
   width: calc(100% - 48px);
 }
-.multi-sel-group .sel-input:hover + div.sel-tip {display: block;}
+.multi-sel-group .sel-input:hover + div.sel-tip {
+  display: block;
+}
 /*span按钮*/
 .multi-sel-group .sel-span-btn{
   position:absolute;
@@ -37,24 +39,23 @@
   text-align: center;
   line-height:30px;
 }
-.multi-sel-group .sel-up-bg{background-color: #49AFCD;}
-.multi-sel-group .sel-up-bg:hover{
-  background-color: #01C6D6;
-  border-color: #01C6D6;
+.multi-sel-group .sel-up-bg{
+  background-color: #49AFCD;
 }
+.multi-sel-group .sel-up-bg:hover,
 .multi-sel-group .sel-down-bg{
   background-color: #01C6D6;
-  border-color: #01C6D6;
 }
-.multi-sel-group .sel-up-bg:active,.multi-sel-group .sel-down-bg:active{
-  background-color: #6C9FD3;
-  border-color: #6C9FD3;
-}
-.multi-sel-group .sel-up-bg:hover + div input.sel-input{
-  border-color: #01C6D6;
-}
+.multi-sel-group .sel-up-bg:hover,
+.multi-sel-group .sel-down-bg,
+.multi-sel-group .sel-up-bg:hover + div input.sel-input,
 .multi-sel-group .sel-down-bg + div input.sel-input{
   border-color: #01C6D6;
+}
+.multi-sel-group .sel-up-bg:active,
+.multi-sel-group .sel-down-bg:active{
+  background-color: #6C9FD3;
+  border-color: #6C9FD3;
 }
 /*下拉框*/
 .multi-sel-group .sel-menu{
@@ -62,13 +63,12 @@
   border: 1px solid #C7E3FF;
   border-radius:2px;
   margin-top: 2px;
-  box-shadow: 1px 1px 2px #9DBFE2;
   background: #F4F4F4;
 }
 .multi-sel-group .sel-menu.in {
   display: block;
 }
-/*下拉框-按钮*/
+/*下拉框-span按钮*/
 .multi-sel-group .sel-btn{
   margin-top: 8px;
   display: inline-block;
@@ -76,13 +76,16 @@
   height: 25px;
   line-height: 25px;
   border-radius: 2px;
-  box-shadow: 2px 2px 2px #9DBFE2;
   background-color: #01c6d6;
   color:#ffffff;
   font-weight: bolder;
 }
-.multi-sel-group .sel-btn:hover{background-color: #9DBFE2;}
-.multi-sel-group .sel-btn:active{background-color: #6C9FD3;}
+.multi-sel-group .sel-btn:hover{
+  background-color: #9DBFE2;
+}
+.multi-sel-group .sel-btn:active{
+  background-color: #6C9FD3;
+}
 /*下拉框-列表*/
 .multi-sel-group .sel-list{
   overflow-x:auto;
@@ -93,13 +96,18 @@
   padding: 0 10px;
   margin-top: 10px;
 }
-.multi-sel-group .sel-list ul li{list-style: none;}
-/*下拉框-列表-复选样式start*/
+.multi-sel-group .sel-list ul li{
+  list-style: none;
+}
+/*下拉框-列表-checkout样式*/
 .multi-sel-group div.sel-checkbox{
   display: inline-block;
   position: relative;
   height: 15px;
   width: 20px;
+}
+.multi-sel-group div.sel-checkbox:hover + div.sel-checkbox-tip{
+  display: block;
 }
 .multi-sel-group input.sel-check{
   opacity: 0;
@@ -124,10 +132,10 @@
 .multi-sel-group div.bg-before:hover{
   background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPAQMAAAABGAcJAAAABlBMVEX///+jo6NECS0/AAAAEklEQVQI12P4/4+hgYkYBFQJAPFjCpUHkjNrAAAAAElFTkSuQmCC') no-repeat center center;
 }
-/*下拉框-列表-复选样式end*/
 
-/*tool tip*/
-.multi-sel-group .sel-tip {
+/*input tool tip*/
+.multi-sel-group .sel-tip,
+.multi-sel-group .sel-checkbox-tip {
   position: absolute;
   z-index: 1070;
   display: none;
@@ -144,12 +152,13 @@
   padding: 3px 8px;
   text-align: center;
   border-radius: 4px;
-
+  border-top-left-radius: 0;
+}
+.multi-sel-group .sel-tip-inner,
+.multi-sel-group .sel-checkbox-tip{
   border: 1px solid #01c6d6;
   background-color: #F4F4F4;
   color:#01c6d6;
-  border-top-left-radius: 0;
-  -webkit-box-shadow: 2px 2px 2px #9DBFE2;
 }
 .multi-sel-group .sel-tip .sel-tip-arrow {
   position: absolute;
@@ -162,8 +171,14 @@
   border-width: 5px 5px 5px 0;
   border-bottom-color: #01c6d6;
 }
-
-/*---------------------公用----------------------*/
+/*li tool tip*/
+.multi-sel-group .sel-checkbox-tip{
+  border-radius:2px;
+  padding: 2px 5px;
+  margin-top: 5px;
+  margin-left: 25px;
+}
+/*---------------------Public style----------------------*/
 
 .multi-sel-group .csrnalwd{cursor:not-allowed!important;}
 .multi-sel-group .curpnt{cursor:pointer!important;}
@@ -183,4 +198,10 @@
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+.multi-sel-group .boxshadow{
+  box-shadow: 2px 2px 2px #9DBFE2;
+  -webkit-box-shadow: 2px 2px 2px #9DBFE2;
+  -moz-box-shadow: 2px 2px 2px #9DBFE2;
+  -o-box-shadow: 2px 2px 2px #9DBFE2;
 }

@@ -40,16 +40,16 @@
             '<div class="ovfhid">\n' +
               '<input type="text" class="sel-input curdft ellipsis" placeholder={{placeTip||"全部"}} readonly ng-model="namesList" />\n' +
               '<div ng-if="namesList!=\'\'" class="sel-tip">' +
-                '<div class="sel-tip-inner">{{namesList.split(\',\').join(\'，\')}}</div>'+
+                '<div class="sel-tip-inner boxshadow">{{namesList.split(\',\').join(\'，\')}}</div>'+
                 '<div class="sel-tip-arrow"></div>'+
               '</div>'+
             '</div>\n' +
           
-            '<div class="sel-menu" ng-class="{in: dropdown}" ng-blur="dropdown = false">\n' +
+            '<div class="sel-menu boxshadow" ng-class="{in: dropdown}" ng-blur="dropdown = false">\n' +
               '<div class="tlc">\n' +
-                '<span class="sel-btn curpnt mr5 donotSelest" type="button" ng-click="clearSelect()">清空</span>\n' +
-                '<span class="sel-btn curpnt mr5 donotSelest" type="button" ng-click="selectAll()">全选</span>\n' +
-                '<span class="sel-btn curpnt donotSelest" type="button" ng-click="dropdown = false;selection()">确定</span>\n' +
+                '<span class="sel-btn boxshadow curpnt mr5 donotSelest" type="button" ng-click="clearSelect()">清空</span>\n' +
+                '<span class="sel-btn boxshadow curpnt mr5 donotSelest" type="button" ng-click="selectAll()">全选</span>\n' +
+                '<span class="sel-btn boxshadow curpnt donotSelest" type="button" ng-click="dropdown = false;selection()">确定</span>\n' +
               '</div>\n' +
               '<div class="sel-list" ng-class="{in: dropdown}" ng-blur="dropdown = false">\n' +
                 '<ul>'+
@@ -58,6 +58,7 @@
                       '<input type="checkbox" class="sel-check" ng-checked="item.checked"/>\n' +
                       '<div class="{{item.checked?\'bg-after\':\'bg-before\'}}"></div>\n' +
                     '</div>'+
+                    '<div class="sel-checkbox-tip boxshadow">{{item.name}}</div>'+
                     '<span>{{item.name}}</span>\n' +
                   '</li>\n' +
                   '<li ng-if="!itemsList||itemsList.length==0">\n' +
