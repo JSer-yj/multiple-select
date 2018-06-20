@@ -98,6 +98,7 @@
 }
 .multi-sel-group .sel-list ul li{
   list-style: none;
+  color: #676767;
 }
 /*下拉框-列表-checkout样式*/
 .multi-sel-group div.sel-checkbox{
